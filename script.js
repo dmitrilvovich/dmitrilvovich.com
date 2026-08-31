@@ -169,8 +169,10 @@ function toggleMorph(element) {
   return morphText(element, target);
 }
 
+
 // Copy the email address and use the same minimum-edit animation for feedback.
 const emailButton = document.querySelector('.header-email');
+
 if (emailButton) {
   const email = emailButton.dataset.email || emailButton.textContent.trim();
   let emailBusy = false;
@@ -184,6 +186,7 @@ if (emailButton) {
       textarea.setAttribute('readonly', '');
       textarea.style.position = 'fixed';
       textarea.style.opacity = '0';
+
       document.body.appendChild(textarea);
       textarea.select();
       document.execCommand('copy');
@@ -193,9 +196,11 @@ if (emailButton) {
 
   emailButton.addEventListener('click', async () => {
     if (emailBusy) return;
+
     emailBusy = true;
 
     await writeEmailToClipboard();
+
     emailButton.setAttribute('aria-label', 'Email address copied');
     emailButton.setAttribute('title', 'Copied');
 
@@ -205,29 +210,38 @@ if (emailButton) {
 
     emailButton.setAttribute('aria-label', 'Copy email address');
     emailButton.setAttribute('title', 'Copy email address');
+
     emailBusy = false;
   });
 }
 
+
+// Intro Levenshtein interaction.
 const introMorph = document.querySelector('.levenshtein-inline');
+
 if (introMorph) {
   introMorph.addEventListener('click', () => toggleMorph(introMorph));
 }
 
+
+// Minecraft project Levenshtein interaction.
 const minecraftTrigger = document.querySelector('.project-morph-trigger');
 const minecraftDescription = document.querySelector('.minecraft-description');
+
 if (minecraftTrigger && minecraftDescription) {
-  minecraftTrigger.addEventListener('click', () => toggleMorph(minecraftDescription));
+  minecraftTrigger.addEventListener('click', () => {
+    toggleMorph(minecraftDescription);
+  });
 }
 
-// Keep the Levenshtein idea visible without making the header constantly busy.
-// Start on "Edit Distance", wait 5 seconds, then alternate between it and
-// "Levenshtein" every 8 seconds. Pause while the link is hovered/focused or
-// while the page is hidden so the animation never fights the user's attention.
+
+// Header Levenshtein animation.
 const navLevenshtein = document.querySelector('.levenshtein-nav');
+
 if (navLevenshtein) {
   const FIRST_NAV_MORPH_DELAY = 5000;
   const NAV_MORPH_INTERVAL = 8000;
+
   let navPaused = false;
 
   navLevenshtein.textContent = reducedMotion.matches
@@ -262,25 +276,4 @@ if (navLevenshtein) {
   };
 
   runNavMorphLoop();
-}
-
-
-/* Keep the content clipping edge just below the actual fixed header height. */
-const siteHeader = document.querySelector('.site-header');
-if (siteHeader) {
-  const HEADER_CLEARANCE = 12;
-
-  const syncContentTop = () => {
-    const headerBottom = siteHeader.getBoundingClientRect().bottom;
-    root.style.setProperty('--content-top', `${Math.ceil(headerBottom + HEADER_CLEARANCE)}px`);
-  };
-
-  syncContentTop();
-
-  if ('ResizeObserver' in window) {
-    const headerObserver = new ResizeObserver(syncContentTop);
-    headerObserver.observe(siteHeader);
-  } else {
-    window.addEventListener('resize', syncContentTop);
-  }
 }
