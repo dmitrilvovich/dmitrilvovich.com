@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#090a0d" />
+  <meta name="description" content="Dmitri Lvovich — Mathematics & Computer Science at McGill. Software engineering, algorithms, and problem solving." />
+  <title>Dmitri Lvovich</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-light.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="pixel-grid" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="site-header wrap">
+    <div class="header-left">
+      <button class="header-email" type="button" data-email="dmitri.lvovich@yahoo.ca" aria-label="Copy email address" title="Copy email address">dmitri.lvovich@yahoo.ca</button>
+      <a class="header-linkedin" href="https://www.linkedin.com/in/dmitrilvovich/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+    </div>
+    <div class="header-right">
+      <nav aria-label="Primary navigation">
+        <a class="levenshtein-nav" href="#levenshtein" data-morph-a="Edit Distance" data-morph-b="Levenshtein" aria-label="About the Levenshtein transitions">Levenshtein</a>
+        <a href="Dmitri-Lvovich-Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+        <span class="theme-icon" aria-hidden="true">◐</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top" class="scroll-shell">
+    <div class="wrap content-wrap">
+    <section class="intro">
+      <h1>Dmitri Lvovich</h1>
+      <p class="lead">I’m a Math &amp; CS student at McGill with a passion for <button class="levenshtein-inline" type="button" data-morph-a="solving difficult problems" data-morph-b="finding simple solutions" aria-label="Toggle phrase using Levenshtein distance">solving difficult problems</button>.
+                      <br>
+                      <br>
+                      I’m currently building a system that reconstructs 3D Minecraft structures from 2D images after I kept finding builds I liked with no world download.</p>
+    </section>
+
+    <section id="experience" class="section">
+      <h2>Experience</h2>
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>Amazon · AWS Lambda</h3>
+            <p class="role">Software Engineer Intern</p>
+          </div>
+          <p class="date">May – Jul 2025</p>
+        </div>
+        <p>Designed and prototyped an open-source Apache Flink stream-processing solution for high-throughput event workloads, demonstrating a <strong>20.3% increase in throughput</strong> compared with the existing architecture.</p>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>Transport Canada</h3>
+            <p class="role">Software Developer Intern</p>
+          </div>
+          <p class="date">May – Aug 2024</p>
+        </div>
+        <p>Improved an office-booking application used by <strong>5,000+ employees</strong> and shipped internal tooling for scheduling, notifications, permissions, and workflow automation.</p>
+      </article>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+
+      <div class="project-list">
+        <article class="project">
+          <div class="project-head">
+            <h3><button class="project-morph-trigger" type="button" aria-label="Toggle Minecraft project description">Minecraft Structure Reconstruction</button></h3>
+            <span>Research · Ongoing</span>
+          </div>
+          <p class="minecraft-description" data-morph-a="Recovering the 3D block-level geometry of Minecraft structures from 2D input images." data-morph-b="I started this after I kept finding Minecraft builds I liked with no world download.">Recovering the 3D block-level geometry of Minecraft structures from 2D input images.</p>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>MiniCaml Interpreter</h3>
+            <span>OCaml</span>
+          </div>
+          <p>A functional-language interpreter with capture-avoiding substitution, big-step evaluation, and type inference using unification.</p>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>Operating Systems Shell & Scheduler</h3>
+            <span>C</span>
+          </div>
+          <p>A Unix-like shell, multi-process scheduler, and virtual-memory system with demand paging and LRU page replacement.</p>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>Search Engine</h3>
+            <span>Java</span>
+          </div>
+          <p>A web crawler and indexer that ranks pages by relevance to a user query.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>McGill University</h3>
+            <p class="role">B.Sc. Mathematics & Computer Science · GPA 3.80/4.00</p>
+          </div>
+          <p class="date">2023 – 2027</p>
+        </div>
+        <p>Relevant courses: Advanced Problem Solving in Competitive Programming, Algorithmic Game Theory, Advanced Algorithms, Applied Machine Learning</p>
+      </article>
+    </section>
+
+
+    <section id="awards" class="section">
+      <h2>Awards</h2>
+      <div class="award-main">
+        <strong>13th in Canada</strong>
+        <span>Meta Hacker Cup 2025 · Round 2</span>
+      </div>
+      <p class="muted">2023 Euclid Mathematics Contest school champion · 2022 Canadian Senior Mathematics Contest school champion</p>
+    </section>
+
+    <section id="levenshtein" class="section final-section levenshtein-section">
+      <h2>Levenshtein</h2>
+      <p>Some text on this site changes using Levenshtein distance to find the fewest insertions, deletions, and substitutions needed to turn one phrase into another.</p>
+    </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
