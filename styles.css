@@ -406,8 +406,7 @@ h1 {
 }
 
 /* Levenshtein easter eggs */
-.levenshtein-inline,
-.project-description-toggle {
+.levenshtein-inline {
   appearance: none;
   border: 0;
   padding: 0;
@@ -432,15 +431,15 @@ h1 {
 
 .levenshtein-inline:hover,
 .levenshtein-inline:focus-visible,
-.project-description-toggle:hover,
-.project-description-toggle:focus-visible,
+.minecraft-description:hover,
+.minecraft-description:focus-visible,
 .project-github-link:hover,
 .project-github-link:focus-visible {
   color: var(--accent);
 }
 
 .levenshtein-inline:focus-visible,
-.project-description-toggle:focus-visible,
+.minecraft-description:focus-visible,
 .project-github-link:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
@@ -455,16 +454,15 @@ h1 {
   text-underline-offset: 5px;
   transition: color .15s ease, text-decoration-color .15s ease;
 }
-.project-description-toggle {
-  font-weight: inherit;
-  line-height: inherit;
+.minecraft-description {
+  cursor: pointer;
   transition: color .15s ease;
 }
 
 
 @media (prefers-reduced-motion: reduce) {
   .levenshtein-inline,
-  .project-description-toggle,
+  .minecraft-description,
   .project-github-link {
     transition: none;
   }

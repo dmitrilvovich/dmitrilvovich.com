@@ -228,6 +228,12 @@ if (introMorph) {
 const minecraftDescription = document.querySelector('.minecraft-description');
 if (minecraftDescription) {
   minecraftDescription.addEventListener('click', () => toggleMorph(minecraftDescription));
+  minecraftDescription.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleMorph(minecraftDescription);
+    }
+  });
 }
 
 
