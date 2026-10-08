@@ -224,14 +224,10 @@ if (introMorph) {
 }
 
 
-// Minecraft project Levenshtein interaction.
-const minecraftTrigger = document.querySelector('.project-morph-trigger');
+// Minecraft description uses the existing Levenshtein morphing function.
 const minecraftDescription = document.querySelector('.minecraft-description');
-
-if (minecraftTrigger && minecraftDescription) {
-  minecraftTrigger.addEventListener('click', () => {
-    toggleMorph(minecraftDescription);
-  });
+if (minecraftDescription) {
+  minecraftDescription.addEventListener('click', () => toggleMorph(minecraftDescription));
 }
 
 

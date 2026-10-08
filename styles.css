@@ -407,7 +407,7 @@ h1 {
 
 /* Levenshtein easter eggs */
 .levenshtein-inline,
-.project-morph-trigger {
+.project-description-toggle {
   appearance: none;
   border: 0;
   padding: 0;
@@ -432,28 +432,40 @@ h1 {
 
 .levenshtein-inline:hover,
 .levenshtein-inline:focus-visible,
-.project-morph-trigger:hover,
-.project-morph-trigger:focus-visible {
+.project-description-toggle:hover,
+.project-description-toggle:focus-visible,
+.project-github-link:hover,
+.project-github-link:focus-visible {
   color: var(--accent);
 }
 
 .levenshtein-inline:focus-visible,
-.project-morph-trigger:focus-visible {
+.project-description-toggle:focus-visible,
+.project-github-link:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
   border-radius: 2px;
 }
 
-.project-morph-trigger {
-  font-weight: 650;
-  letter-spacing: -.015em;
+.project-github-link {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, var(--muted) 55%, transparent);
+  text-underline-offset: 5px;
+  transition: color .15s ease, text-decoration-color .15s ease;
+}
+.project-description-toggle {
+  font-weight: inherit;
+  line-height: inherit;
   transition: color .15s ease;
 }
 
 
 @media (prefers-reduced-motion: reduce) {
   .levenshtein-inline,
-  .project-morph-trigger {
+  .project-description-toggle,
+  .project-github-link {
     transition: none;
   }
 }
